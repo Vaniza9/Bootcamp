@@ -1,0 +1,36 @@
+
+
+
+
+<%= link_to "Add New Product", new_product_path(@product) %>
+
+
+<h1> ALL PRODUCTS</h1>
+<ul>
+
+
+<% @products.each do |product|%>
+
+<li>
+
+
+ <a href="/products/<%= product.id %>">
+       <%= product.product_name  %>
+ </a>
+
+</li>
+
+
+<p>
+
+  <%= link_to "Edit", edit_product_path(product) %> |
+
+  <%= link_to "Delete", product, :confirm => "Are you Sure, to delete record?" , :method => :delete %>
+
+
+
+
+<% end %>
+
+
+</ul>
